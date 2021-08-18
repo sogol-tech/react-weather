@@ -29,9 +29,11 @@ export default function Weather() {
                 src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
                 alt="cloudy"
               />
-              18°C
+
+              <span className="temperature">19</span>
+              <span className="unit">°C</span>
             </div>
-            <ul>
+            <ul className="condition">
               <li>Humidity: 81% </li>
               <li>Wind: 8 mph</li>
             </ul>
@@ -40,7 +42,7 @@ export default function Weather() {
 
         <div className="col-6">
           <h1>London</h1>
-          <ul>
+          <ul className="status">
             <li>Wednesday 10:00</li>
             <li>Cloudy</li>
           </ul>
