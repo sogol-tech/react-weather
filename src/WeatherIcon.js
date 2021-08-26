@@ -1,33 +1,30 @@
 import React from "react";
-import ReactAnimatedWeather from "react-animated-weather";
+import { WiDaySunny } from "weather-icons-react";
 
 export default function WeatherIcon(props) {
   const codeMapping = {
-    "01d": "CLEAR_DAY",
-    "01n": "CLEAR_NIGHT",
-    "02d": "PARTLY_CLOUDY_DAY",
-    "02n": "PARTLY_CLOUDY_NIGHT",
-    "03d": "PARTLY_CLOUDY_DAY",
-    "03n": "PARTLY_CLOUDY_NIGHT",
-    "04d": "CLOUDY",
-    "04n": "CLOUDY",
-    "09d": "RAIN",
-    "09n": "RAIN",
-    "10d": "RAIN",
-    "10n": "RAIN",
-    "11d": "RAIN",
-    "11n": "RAIN",
-    "13d": "SNOW",
-    "13n": "SNOW",
-    "50d": "FOG",
-    "50n": "FOG",
+    "01d": <WiDaySunny size={24} color="black" />,
+    "01n": <WiNightClear size={24} color="black" />,
+    "02d": <WiDayCloudy size={24} color="black" />,
+    "02n": <WiNightCloudy size={24} color="black" />,
+    "03d": <WiCloudyWindy size={24} color="black" />,
+    "03n": <WiNightAltCloudyWindy size={24} color="black" />,
+    "04d": <WiCloudyGusts size={24} color="black" />,
+    "04n": <WiNightAltCloudyGusts size={24} color="black" />,
+    "09d": <WiDayRain size={24} color="black" />,
+    "09n": <WiNightAltRain size={24} color="black" />,
+    "10d": <WiDayRainMix size={24} color="black" />,
+    "10n": <WiNightAltRainMix size={24} color="black" />,
+    "11d": <WiDayThunderstorm size={24} color="black" />,
+    "11n": <WiNightAltThunderstorm size={24} color="black" />,
+    "13d": <WiDaySnowWind size={24} color="black" />,
+    "13n": <WiNightAltSnowWind size={24} color="black" />,
+    "50d": <WiWindy size={24} color="black" />,
+    "50n": <WiStrongWind size={24} color="black" />,
   };
-  return (
-    <ReactAnimatedWeather
-      icon={codeMapping[props.code]}
-      color="#202124"
-      size={props.size}
-      animate={true}
-    />
-  );
+  return class Weather extends React.Component {
+    render() {
+      return codeMapping[props.code];
+    }
+  };
 }
